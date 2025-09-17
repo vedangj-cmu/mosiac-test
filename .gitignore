@@ -1,2 +1,4 @@
 build
 src/Mosaic*
+*.jpeg
+*__pycache__*
