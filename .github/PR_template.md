@@ -2,13 +2,12 @@
 
 <!-- What is the change? Why is it needed? -->
 
----
 
 ## 🔗 Issue
 
 Fixes #<issue_number>
 
----
+
 
 ## Checklist (must be completed before merge)
 
@@ -23,7 +22,7 @@ Fixes #<issue_number>
 - [ ] CI pipeline passes (tests + checks)
 - [ ] At least one reviewer has approved with meaningful feedback (not just “LGTM”)
 
----
+
 
 ## Reviewer Notes
 
