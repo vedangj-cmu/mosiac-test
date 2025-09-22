@@ -5,12 +5,16 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "Mosaic"
 version = "0.1.0"
-description = "A short description of your package" # A brief description # TODO:
+description = "A multi-tool for vehicular sensor data processing and visualization"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" } # TODO:
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }, # TODO:
+    { name = "Gabriel Brookman", email = "gbrookma@andrew.cmu.edu" },
+    { name = "Jenny Qu", email = "jinrongq@andrew.cmu.edu" },
+    { name = "Raghavi Shirur", email = "rshirur@andrew.cmu.edu"  },
+    { name = "Ryan Goldberg", email = "ryangold@andrew.cmu.edu" },
+    { name = "Vedang Joshi", email = "vedangj@andrew.cmu.edu" },
+    { name = "Yi Shi", email = "yishi3@andrew.cmu.edu" },
 ]
 dependencies = [
 
