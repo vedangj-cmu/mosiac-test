@@ -31,7 +31,7 @@ def mosaic():
     if args.command == SERVE:
         raise NotImplementedError
     elif args.command == INGEST:
-        print(f"Ingesting")
+        print("Ingesting")
         ingest(bag_path=args.src, img_path=args.dest)
     else:
         parser.print_help()
