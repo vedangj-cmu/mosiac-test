@@ -7,7 +7,7 @@ name = "Mosaic"
 version = "0.1.0"
 description = "A multi-tool for vehicular sensor data processing and visualization"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 authors = [
     { name = "Gabriel Brookman", email = "gbrookma@andrew.cmu.edu" },
     { name = "Jenny Qu", email = "jinrongq@andrew.cmu.edu" },
@@ -17,7 +17,10 @@ authors = [
     { name = "Yi Shi", email = "yishi3@andrew.cmu.edu" },
 ]
 dependencies = [
-
+    "pyfakefs",
+    "sqlmodel",
+    "termcolor",
+    "pathlib"
 ]
 
 [project.scripts]

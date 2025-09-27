@@ -2,3 +2,4 @@ build
 src/Mosaic*
 *.jpeg
 *__pycache__*
+typings/
