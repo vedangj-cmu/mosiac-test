@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
+    platform: linux/amd64
     image: project-dev:latest
     container_name: project-dev
     volumes:
@@ -16,7 +17,8 @@ services:
       - TERM=xterm-256color
       - SSH_AUTH_SOCK=/ssh-agent
     ports:
-      - "127.0.0.1:8000:8000"
+      - "8000:8000"
+      - "5173:5173"
     tty: true
     stdin_open: true
 volumes:

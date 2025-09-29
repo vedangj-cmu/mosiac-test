@@ -3,7 +3,8 @@
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "dev",
   "workspaceFolder": "/work",
-  "remoteUser": "dev",
+  "remoteUser": "ubuntu",
+  "containerUser": "ubuntu",
   "features": {},
   "customizations": {
     "vscode": {
@@ -15,5 +16,6 @@
       ]
     }
   },
-  "postCreateCommand": "echo Dev container ready"
+  "postCreateCommand": "echo Dev container ready",
+  "forwardPorts": [8000, 5173]
 }
