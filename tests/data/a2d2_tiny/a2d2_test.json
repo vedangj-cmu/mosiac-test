@@ -1,0 +1,163 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "Car"
+        },
+        {
+            "id": 1,
+            "name": "VanSUV"
+        },
+        {
+            "id": 2,
+            "name": "Truck"
+        },
+        {
+            "id": 3,
+            "name": "Pedestrian"
+        }
+    ],
+    "annotations": [
+        {
+            "id": 0,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                -551.8039,
+                703.848,
+                472.429,
+                1248.45
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 1,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                1378.114,
+                648.5591,
+                1640.203,
+                839.7605
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 2,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                1140.787,
+                700.373,
+                1253.275,
+                792.6976
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 3,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                954.6407,
+                693.5306,
+                1090.467,
+                815.6362
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 4,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                580.2076,
+                692.0326,
+                824.1742,
+                859.0681
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 5,
+            "image_id": 1,
+            "category_id": 1,
+            "bbox": [
+                754.5418,
+                668.8353,
+                922.7072,
+                820.6092
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 6,
+            "image_id": 1,
+            "category_id": 0,
+            "bbox": [
+                549.6677,
+                708.2317,
+                813.6072,
+                895.9961
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 7,
+            "image_id": 1,
+            "category_id": 0,
+            "bbox": [
+                948.7403,
+                704.6224,
+                1131.5819,
+                855.1624
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 8,
+            "image_id": 1,
+            "category_id": 1,
+            "bbox": [
+                1460.1876,
+                679.1962,
+                1931.7213,
+                903.9889
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 9,
+            "image_id": 1,
+            "category_id": 1,
+            "bbox": [
+                -247.6227,
+                733.2364,
+                596.5533,
+                1257.3584
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        }
+    ],
+    "images": [
+        {
+            "id": 0,
+            "file_name": "test/20181008095521_camera_frontcenter_000001850.png"
+        },
+        {
+            "id": 1,
+            "file_name": "test/20181016125231_camera_frontcenter_000183553.png"
+        }
+        
+    ]
+}

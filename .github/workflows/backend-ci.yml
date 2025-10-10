@@ -9,8 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: osrf/ros:rolling-desktop
+    container: docker.io/osrf/ros:rolling-desktop
 
     steps:
       - name: Checkout
@@ -24,8 +23,7 @@ jobs:
         run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Install deps
-        run: |
-          poetry install --with dev --no-interaction --no-ansi --no-root
+        run: poetry install --with dev --no-interaction --no-ansi --no-root
 
       - name: Lint (Black)
         run: poetry run black --check .
@@ -39,7 +37,9 @@ jobs:
 
       - name: Pytest + coverage
         run: |
-          poetry run pytest -q --cov=src --cov-report=xml --cov-report=term
+          source /opt/ros/rolling/setup.bash
+          poetry run pytest -q --cov=src --cov-report=xml --cov-report=term-missing
+        shell: bash
 
       - name: Upload coverage.xml
         uses: actions/upload-artifact@v4

@@ -1,0 +1,123 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "Car"
+        },
+        {
+            "id": 1,
+            "name": "VanSUV"
+        },
+        {
+            "id": 2,
+            "name": "Truck"
+        },
+        {
+            "id": 3,
+            "name": "Pedestrian"
+        }
+    ],
+    "annotations": [
+        {
+            "id": 0,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                -133.8325,
+                697.7809,
+                66.92036,
+                793.2252
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 1,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                1330.264,
+                710.613,
+                1728.596,
+                942.255
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 2,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                942.0939,
+                680.1047,
+                1057.985,
+                770.2891
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 3,
+            "image_id": 0,
+            "category_id": 0,
+            "bbox": [
+                618.0557,
+                682.1148,
+                805.0467,
+                806.8234
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 4,
+            "image_id": 0,
+            "category_id": 2,
+            "bbox": [
+                1079.717,
+                611.4694,
+                1174.791,
+                714.8179
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 5,
+            "image_id": 1,
+            "category_id": 0,
+            "bbox": [
+                780.5331,
+                680.9995,
+                876.1054,
+                749.9033
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        },
+        {
+            "id": 6,
+            "image_id": 1,
+            "category_id": 0,
+            "bbox": [
+                21.379,
+                701.9111,
+                629.3354,
+                1040.51
+            ],
+            "area": 0,
+            "iscrowd": 0  
+        }
+    ],
+    "images": [
+        {
+            "id": 0,
+            "file_name": "val/20181108084007_camera_frontcenter_000029570.png"
+        },
+        {
+            "id": 1,
+            "file_name": "val/20181108091945_camera_frontcenter_000005828.png"
+        }        
+    ]
+}

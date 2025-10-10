@@ -24,7 +24,7 @@ class LogInfo(SQLModel, table=True):
     # The path to the log itself (i.e the path to the .mcap)
     log_path: str = Field(default=None, primary_key=True)
     # If it exists, the path to the directory of extracted images
-    img_path: Optional[str] = None
+    img_dir_path: Optional[str] = None
     # If it exists, the path to the ground truth json file
     gt_path: Optional[str] = Field(default=None, index=True)
     # If it exists, the path to the prediction json file
@@ -68,9 +68,9 @@ class Repository:
             mosaic_dir = cwd / MOSAIC_DIR
             mosaic_dir.mkdir()
             # Create the metadata files within the mosaic_dir
+            self.root_path = cwd
             engine = self._get_engine()
             SQLModel.metadata.create_all(engine)
-            self.root_path = cwd
         else:
             if root_path is None:
                 # We're not in a mosaic repo
@@ -121,7 +121,7 @@ class Repository:
                                         # FIXME: replace this with a much better parser
                                         # Needs error checking and stuff. Just a PoC
                                         gt = json.load(json_file)
-                                        log_posix_path = gt["log_path"]
+                                        log_posix_path = gt.get("log_path", "")
 
                                         log_record = session.get(
                                             LogInfo, log_posix_path
@@ -151,10 +151,22 @@ class Repository:
         (images have not been extracted)"""
         engine = self._get_engine()
         with Session(engine) as session:
-            statement = select(LogInfo).where(LogInfo.img_path.is_(None))
+            statement = select(LogInfo).where(LogInfo.img_dir_path.is_(None))
             logs = session.exec(statement).all()
 
             return logs
+
+    def add_images(self, log_path: Path, img_dir_path: Path) -> None:
+        """Add the path to extracted images for a given log"""
+        engine = self._get_engine()
+        with Session(engine) as session:
+            log_record = session.get(LogInfo, log_path.as_posix())
+            if log_record is None:
+                raise MosaicRepoException(f"Log {log_path} not found in repository")
+
+            log_record.img_dir_path = img_dir_path.as_posix()
+            session.add(log_record)
+            session.commit()
 
     def print_tree(self, dir_path: Path, prefix: str = ""):  # pragma: no cover
         """
