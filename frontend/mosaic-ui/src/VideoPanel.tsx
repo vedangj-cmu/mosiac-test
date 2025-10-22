@@ -4,7 +4,7 @@ import PlayerControl from './PlayerControl'
 import type { VideoHandle } from './VideoPlayer'
 
 const VideoPanel = () => {
-  const refs = useRef<(VideoHandle | null)[]>([])
+  const refs = Array.from({ length: 6 }, () => useRef<VideoHandle>(null))
   const srcs = [
     '/video?filename=center_front_image_rect_compressed.mp4',
     '/video?filename=center_rear_image_rect_compressed.mp4',
