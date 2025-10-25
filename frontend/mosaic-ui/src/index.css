@@ -1,1 +1,98 @@
 @import 'tailwindcss';
+
+/* CSS Variables for Light Mode */
+:root {
+    /* Background colors */
+    --color-background: #fafafa;
+    --color-background-secondary: #f5f5f5;
+    --color-background-tertiary: #e5e5e5;
+
+    /* Foreground colors */
+    --color-foreground: #171717;
+    --color-foreground-secondary: #525252;
+    --color-foreground-tertiary: #737373;
+
+    /* Border colors */
+    --color-border: #e5e5e5;
+    --color-border-secondary: #d4d4d4;
+
+    /* Card colors */
+    --color-card: #ffffff;
+    --color-card-foreground: #171717;
+
+    /* Input colors */
+    --color-input: #f5f5f5;
+    --color-input-foreground: #171717;
+
+    /* Ring color */
+    --color-ring: #0ea5e9;
+}
+
+/* CSS Variables for Dark Mode */
+.dark {
+    /* Background colors */
+    --color-background: #0a0a0a;
+    --color-background-secondary: #171717;
+    --color-background-tertiary: #262626;
+
+    /* Foreground colors */
+    --color-foreground: #fafafa;
+    --color-foreground-secondary: #d4d4d4;
+    --color-foreground-tertiary: #a3a3a3;
+
+    /* Border colors */
+    --color-border: #262626;
+    --color-border-secondary: #404040;
+
+    /* Card colors */
+    --color-card: #171717;
+    --color-card-foreground: #fafafa;
+
+    /* Input colors */
+    --color-input: #262626;
+    --color-input-foreground: #fafafa;
+
+    /* Ring color */
+    --color-ring: #38bdf8;
+}
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: var(--color-background-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: var(--color-border-secondary);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-foreground-tertiary);
+}
