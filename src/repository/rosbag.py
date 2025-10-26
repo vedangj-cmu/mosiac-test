@@ -53,15 +53,16 @@ class BagReader:
         # to associated python type ex. sensor_msgs.msg.CompressedImage
         # TODO: add error handling for unsupported types
         type_to_def = {}
-        for definition in self._reader.get_all_message_definitions():
-            typ = SUPPORTED_MSGS.get(definition.topic_type, None)
+        topic_types = self._reader.get_all_topics_and_types()
+        for topic_metadata in topic_types:
+            typ = SUPPORTED_MSGS.get(topic_metadata.type, None)
             if typ is None:
                 self._logger.error(
                     "Unsupported message type in bag %s: %s",
                     self._uri,
-                    definition.topic_type,
+                    topic_metadata.type,
                 )
-            type_to_def[definition.topic_type] = typ
+            type_to_def[topic_metadata.type] = typ
 
         # Map the topics (string, ex. /driver_rear/image_rect/compressed) in this bag to their python classes
         self._topic_to_def = {

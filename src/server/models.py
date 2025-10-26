@@ -4,8 +4,14 @@ src/server/models.py
 """
 
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Type, Any
 from datetime import datetime
+
+
+class Topic(BaseModel):
+    name: str
+    schema_name: str
+    schema_type: Type[Any] | None = None
 
 
 class File(BaseModel):
