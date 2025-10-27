@@ -25,7 +25,7 @@ const App = () => {
       <div className="min-h-screen bg-background text-foreground">
         {/* Header with theme toggle */}
         <header className="flex items-center justify-between p-4 border-b border-border bg-card">
-          <h1 className="text-2xl font-bold text-foreground">Mosaic UI</h1>
+          <h1 className="text-2xl font-bold text-foreground">Mosaic UI New</h1>
           <ThemeToggle />
         </header>
 
