@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'frontend/mosaic-ui/**'
   workflow_dispatch:
 
 permissions:
@@ -28,18 +30,6 @@ jobs:
         working-directory: frontend/mosaic-ui
         run: npm ci
 
-      # 4️⃣ Add local node binaries to PATH (ensures tsc + vite found)
-      - name: Add local binaries to PATH
-        working-directory: frontend/mosaic-ui
-        run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
-
-      # 5️⃣ Sanity check TypeScript binary
-      - name: Verify TypeScript install
-        working-directory: frontend/mosaic-ui
-        run: |
-          npx tsc --version
-          ls node_modules/.bin/tsc
-           
       - name: Build project
         working-directory: frontend/mosaic-ui
         run: npm run build
