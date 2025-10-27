@@ -14,10 +14,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend/mosaic-ui 
-        
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,16 +24,19 @@ jobs:
         with:
           node-version: 23
           cache: npm
+          cache-dependency-path: 'frontend/mosaic-ui/package-lock.json'
 
       - name: Install dependencies
+        working-directory: frontend/mosaic-ui
         run: npm ci
 
       - name: Build project
+        working-directory: frontend/mosaic-ui
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: frontend/mosaic-ui/dist
           force_orphan: true
