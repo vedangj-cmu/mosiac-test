@@ -38,3 +38,6 @@ sensor_data*.mcap
 *.mp4
 *_metadata.json
 envmac11/
+
+.cspell/
+segments/
